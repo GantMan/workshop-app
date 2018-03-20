@@ -10,6 +10,7 @@ import CenterView from './CenterView';
 import Welcome from './Welcome';
 
 import '../../src/views/howdy.story'
+import '../../src/views/demo-cell.story'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
