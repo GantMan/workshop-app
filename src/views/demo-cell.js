@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { PropTypes } from "prop-types"
 
 export class DemoCell extends React.Component {
@@ -9,7 +9,8 @@ export class DemoCell extends React.Component {
     talkTitle: PropTypes.string,
     avatarUrl: PropTypes.string,
     startTime: PropTypes.string,
-    duration: PropTypes.string
+    duration: PropTypes.string,
+    onPress: PropTypes.func.isRequired
   }
 
   static defaultProps = {
@@ -25,13 +26,13 @@ export class DemoCell extends React.Component {
   render () {
     const { speakerName, talkTitle, avatarUrl, startTime, duration } = this.props.talk
     return (
-      <View style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
         <View style={styles.topContainer}>
           <View style={styles.topText}>
             <Text style={styles.speakerName}>{speakerName}</Text>
             <Text style={styles.talkTitle}>{talkTitle}</Text>
           </View>
-          <View style={{justifyContent: 'center'}}>
+          <View style={{justifyContent: 'center', flex: 1}}>
             <Image style={styles.image} source={{uri: avatarUrl}} />
           </View>
         </View>
@@ -55,13 +56,14 @@ export class DemoCell extends React.Component {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'white',
     marginHorizontal: 15,
     borderWidth: 1,
     borderColor: 'lightgray',
@@ -74,6 +76,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingVertical: 20
+  },
+  topText: {
+    flex: 5,
+    paddingRight: 10
   },
   speakerName: {
     fontSize: 13,

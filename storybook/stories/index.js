@@ -11,6 +11,7 @@ import Welcome from './Welcome';
 
 import '../../src/views/howdy.story'
 import '../../src/views/demo-cell.story'
+import '../../src/views/talk-details.story'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 

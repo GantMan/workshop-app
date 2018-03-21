@@ -12,5 +12,5 @@ const TALK = {
 
 storiesOf('DemoCell')
   .add('Basic DemoCell', () => (
-    <DemoCell talk={TALK} />
+    <DemoCell talk={TALK} onPress={() => window.alert('Open Something')} />
   ))
