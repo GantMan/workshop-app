@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { PropTypes } from "prop-types"
 
-export class DemoCell extends React.Component {
+export default class DemoCell extends React.Component {
   static propTypes = {
     talk: PropTypes.object,
     speakerName: PropTypes.string,
