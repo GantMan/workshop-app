@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { PropTypes } from "prop-types"
 
 export class DemoCell extends React.Component {
@@ -9,7 +9,8 @@ export class DemoCell extends React.Component {
     talkTitle: PropTypes.string,
     avatarUrl: PropTypes.string,
     startTime: PropTypes.string,
-    duration: PropTypes.string
+    duration: PropTypes.string,
+    onPress: PropTypes.func.isRequired
   }
 
   static defaultProps = {
@@ -25,7 +26,7 @@ export class DemoCell extends React.Component {
   render () {
     const { speakerName, talkTitle, avatarUrl, startTime, duration } = this.props.talk
     return (
-      <View style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
         <View style={styles.topContainer}>
           <View style={styles.topText}>
             <Text style={styles.speakerName}>{speakerName}</Text>
@@ -55,13 +56,14 @@ export class DemoCell extends React.Component {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'white',
     marginHorizontal: 15,
     borderWidth: 1,
     borderColor: 'lightgray',
