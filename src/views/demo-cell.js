@@ -32,7 +32,7 @@ export class DemoCell extends React.Component {
             <Text style={styles.speakerName}>{speakerName}</Text>
             <Text style={styles.talkTitle}>{talkTitle}</Text>
           </View>
-          <View style={{justifyContent: 'center'}}>
+          <View style={{justifyContent: 'center', flex: 1}}>
             <Image style={styles.image} source={{uri: avatarUrl}} />
           </View>
         </View>
@@ -76,6 +76,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingVertical: 20
+  },
+  topText: {
+    flex: 5,
+    paddingRight: 10
   },
   speakerName: {
     fontSize: 13,
