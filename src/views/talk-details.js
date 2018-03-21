@@ -48,7 +48,7 @@ export class TalkDetails extends React.Component {
           </View>
           <View style={styles.topText}>
             <Text style={styles.topHeader}>ABOUT</Text>
-            <Text style={styles.talkTitle}>{talkTitle}</Text>
+            <Text style={styles.talkTitle}>{speakerName}</Text>
             <Text style={styles.talkDescription}>{aboutDescription}</Text>
           </View>
         </View>
