@@ -53,7 +53,9 @@ class App extends React.PureComponent {
         avatarUrl: url,
         startTime: item.start,
         duration: item.duration
-      }} />
+      }}
+        onPress={() => alert('Yay')}
+      />
     )
   }
 
